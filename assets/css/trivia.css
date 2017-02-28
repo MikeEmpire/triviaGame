@@ -1,0 +1,56 @@
+body {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background: none;
+}
+
+#homePage {
+    width: 100%;
+    height: 100%;
+    background: gainsboro;
+}
+
+.col-md-12 {
+    text-transform: uppercase;
+    color: blanchedalmond;
+}
+
+.col-md-12 h1 {
+    font-family: 'Mada', sans-serif;
+}
+
+.full {
+    background: url(/Users/afamolie/triviaGame/assets/images/pt3_mockup_final.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.fullpage {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+#startButton {
+    border-radius: 10px;
+    position: relative;
+    top: 110%;
+    font-family: 'Shrikhand', cursive;
+}
+
+#startDiv {
+    height: 200px;
+}
+
+a#startButton:hover {
+    background-color: mediumseagreen;
+    transition: .3s;
+}
+
+#questionBox {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    height: 120px
+}
