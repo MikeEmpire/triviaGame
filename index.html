@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="full">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <head>
     <title></title>
@@ -10,19 +11,46 @@
 
 <body>
     <div class="fullpage"></div>
+    <h1 class="text-center">SneakerHead Trivia</h1>
 
 
     <!-- Page Content -->
     <div class="container">
         <div class="row">
             <div id="questionBox" class="col-lg-12 col-md-12 col-sm-12">
-                <h1 class="text-center">Curren$y Discography Trivia</h1>
-                <p class="text-center">Trivia about Curren$y's music discography and his career!</p>
+                <h1 class="text-center">Trivia Regarding facts about Sneaker Culture</h1>
+                <p class="text-center">Lets check your SneakerHead knowledge..</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 stats">
+                <p class="text-left">Incorrect:<span id="incorrect"></span></p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 stats">
+                <p class="text-center">Correct:<span id="correct"></span></p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 stats">
+                <p class="text-left">Questions Left:<span id="questionsLeft"></span></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 timer">
+                <p class="text-center"><span id="counter"></span></p>
             </div>
         </div>
         <div class="row">
             <div id="startDiv" class="col-lg-12 col-md-12 col-sm-12 text-center">
                 <a id="startButton" href="#" class="btn btn-primary btn-lg">Click To Begin</a>
+            </div>
+        </div>
+
+        <div id="textField" class="form-group">
+            <div class="input-group">
+                <span id="steez" class="input-group-addon">$</span>
+                <input id="textBar" type="text" class="form-control">
+                <span class="input-group-btn">
+                    <button id="steez" class="btn btn-default" type="button">Button</button>
+                </span>
             </div>
         </div>
         <!-- /.row -->

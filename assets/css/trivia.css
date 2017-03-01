@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
 body {
     margin-top: 50px;
     margin-bottom: 50px;
@@ -10,21 +12,28 @@ body {
     background: gainsboro;
 }
 
+h1 {
+    font-family: 'Mada', sans-serif;
+}
+
 .col-md-12 {
     text-transform: uppercase;
     color: blanchedalmond;
 }
 
 .col-md-12 h1 {
-    font-family: 'Mada', sans-serif;
+    font-size: 23px;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 1px;
 }
 
 .full {
-    background: url(/Users/afamolie/triviaGame/assets/images/pt3_mockup_final.jpg) no-repeat center center fixed;
+    background: url(../images/original.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    transition: background 1s linear;
 }
 
 .fullpage {
@@ -36,7 +45,7 @@ body {
 #startButton {
     border-radius: 10px;
     position: relative;
-    top: 110%;
+    top: 40%;
     font-family: 'Shrikhand', cursive;
 }
 
@@ -52,5 +61,33 @@ a#startButton:hover {
 #questionBox {
     background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    height: 120px
+    height: 120px;
+    font-family: 'Shrikhand', cursive;
+}
+
+.stats {
+    margin-top: 9px;
+    font-size: larger;
+    font-family: 'Mada', sans-serif;
+}
+
+#steez {
+    color: beige;
+    background-color: skyblue;
+    border-color: skyblue;
+    border-radius: 6px;
+    height: 50px;
+}
+
+#steez:hover {
+    background-color: mediumseagreen;
+    transition: .3s;
+}
+
+#textBar {
+    height: 50px;
+}
+
+#timer {
+    font-family: 'Orbitron', sans-serif;
 }
