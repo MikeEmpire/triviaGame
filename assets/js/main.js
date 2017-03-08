@@ -1,4 +1,17 @@
 $(document).ready(function() {
+    var selectedAnswer, answers = ['Run DMC', 'Swoosh', 'North Carolina', 'Oregon', 'Nike Blazers', 'Keds', 'Tinker Hartfield', '30 Dollars', 'Fast Times at Ridgemont High'],
+        question, questionBank = ['Which rap group was the first to publicly endorse sneakers in their music?', 'What is the logo for Nike?', 'What is Michael Jordans alma mater ', 'Where are Nike sneakers made?', 'What Nike Shoe is named after a basketball franchise in Portland?', 'What was the first sneaker ever mass produced?', 'Who designed Michael Jordan\'s iconic sneakers?', 'How much was the swoosh designed for?', 'What cult 80s teen film helped bring Vans into the sneaker culture?'],
+        selectedQuestion, promptQuestion, incorrectAnswers = 0,
+        correctAnswers = 0,
+        questionsLeft = 7,
+        questionNext,
+        selectedAnswerIndex,
+        textBarInput = '',
+        counter = 0;
+    selectedQuestion = questionBank[Math.floor(Math.random() * questionBank.length)];
+    selectedAnswerIndex = questionBank.indexOf(selectedQuestion);
+    selectedAnswer = answers[selectedAnswerIndex];
+
     function changeBackGround() {
         var images = ["assets/images/original.jpg", "assets/images/VansWallpaper.jpg", "assets/images/Sneaker.jpg", "assets/images/Vans.jpg", "assets/images/nvla7UR.jpg"],
             randomImage,
@@ -12,52 +25,72 @@ $(document).ready(function() {
     }
     setInterval(changeBackGround, 3000);
 
-    $("#textField").css("display", "none");
-    $(".stats").css("display", "none");
+    function checkAnswer() {
+        // check if input value is equal to correct answer
+        $("#steez").click(function() {
+            textBarInput = $("#textBar").val().trim();
+
+            function stopTimer() {
+                counter = 0;
+                clearTimeout(counter);
+            }
+
+            console.log(textBarInput);
+            if (textBarInput === selectedAnswer) {
+                stopTimer();
+                // if it is, display correct! hide all of the content inside of the startDiv
+                $("#counter").html("Correct!");
+                // increment correctAnswers variable & decrement the questionsLeft variable
+                correctAnswers++;
+                console.log(correctAnswers);
+                questionsLeft--;
+                console.log(questionsLeft);
+                // call nextQuestion function after 5 seconds
+            } else { // if the answer is incorrect, display incorrect
+                $("#counter").html("Incorrect");
+                incorrectAnswers++;
+                questionsLeft--;
+                stopTimer();
+            }
+        });
+    }
+
+    function callTimer() {
+        counter = 30;
+        setInterval(function() {
+            counter--;
+            if (counter >= 10) {
+                $("#counter").html("00:" + counter);
+            } else if (textBarInput === selectedAnswer) {
+                counter = 0;
+                clearTimeout(counter);
+            } else if (counter > 0 && counter <= 9) {
+                $("#counter").html("00:0" + counter);
+            } else if (counter === 0) {
+                // call function to display new question
+                $("#counter").html("Times Up!");
+                $("#questionBox").html("The correct answer is " + selectedAnswer);
+                $("#nextQuestion").css("display", "inherit");
+                questionsLeft--;
+                clearInterval(counter);
+            }
+        }, 1000);
+    }
+
+    function gameOver() {
+
+    }
+    $("#textField, #timer, .stats").css("display", "none");
 
     $("#startButton").click(function() {
-        var selectedAnswer, answers, question, questionBank = ['Who is the first employee for nike?', 'What is the logo for Nike?', 'What is Michael Jordans alma mater ', 'Where are Nike sneakers made?', 'What Nike Shoe is named after a basketball franchise in Portland?', 'When was the Air force originally launched?', 'Who designed Michael Jordan\'s iconic sneakers?', 'How much was the swoosh designed for?', 'What is the most popular sneaker for nike?', 'Where is Nike\'s headquarters?'],
-            selectedQuestion, promptQuestion, incorrectAnswers = 0,
-            correctAnswers = 0,
-            questionsLeft = 10;
-        $("#textField").css("display", "inherit");
-        $(".stats").css("display", "inherit");
-        promptQuestion = $("<h1>Here is a new question</h1>");
-        promptQuestion.addClass("text-center");
-        $("#questionsLeft").append(questionsLeft);
-        $("#incorrect").append(incorrectAnswers);
-        $("#correct").append(correctAnswers);
-        // get random question from questionBank array
-        // once random question is selected, pop that question from questionBank array
-        // display random question 
-        // give random question the current question variable
-        // display options
-
-        function selectAnswer() {
-
-        }
-
-        function callTimer() {
-            var counter = 5;
-            setInterval(function() {
-                counter--;
-                if (counter >= 0) {
-                    $("#counter").append(counter);
-                }
-                if (counter === 0) {
-                    // call function to display new question
-                    /*
-                    Code goes Here
-                     */
-                    clearInterval(counter);
-                }
-            }, 1000);
-        }
-
-        $("#questionBox").html(promptQuestion);
+        $("#startDiv, #nextQuestion").css("display", "none");
+        $("#textField, #timer").css("display", "inherit");
+        $("#questionBox").html(selectedQuestion);
         $("#startButton").css("display", "none");
-        // change start button to text input
-        // set interval for timer per question
-        // create logic for 
+        console.log(selectedQuestion);
+        console.log(selectedAnswer);
+        checkAnswer();
+        callTimer();
+        gameOver();
     });
 });

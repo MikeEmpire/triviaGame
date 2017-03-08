@@ -10,8 +10,9 @@
 </head>
 
 <body>
-    <div class="fullpage"></div>
-    <h1 class="text-center">SneakerHead Trivia</h1>
+    <div id="titleBox" class="col-lg-12 col-md-12 col-sm-12">
+        <h1 class="text-center">SneakerHead Trivia</h1>
+    </div>
 
 
     <!-- Page Content -->
@@ -33,10 +34,9 @@
                 <p class="text-left">Questions Left:<span id="questionsLeft"></span></p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 timer">
-                <p class="text-center"><span id="counter"></span></p>
-            </div>
+        <div id="timer" class="jumbotron text-center">
+            <h1 id="counter">Get Ready!</h1>
+            <p><a id="nextQuestion" class="btn btn-primary btn-lg">Next Question</a></p>
         </div>
         <div class="row">
             <div id="startDiv" class="col-lg-12 col-md-12 col-sm-12 text-center">
@@ -49,7 +49,7 @@
                 <span id="steez" class="input-group-addon">$</span>
                 <input id="textBar" type="text" class="form-control">
                 <span class="input-group-btn">
-                    <button id="steez" class="btn btn-default" type="button">Button</button>
+                    <button id="steez" class="btn btn-default" type="button">Submit</button>
                 </span>
             </div>
         </div>

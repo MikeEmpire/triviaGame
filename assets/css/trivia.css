@@ -12,6 +12,18 @@ body {
     background: gainsboro;
 }
 
+#titleBox {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    height: 60px;
+    margin: 0px 0px 10px 0px;
+}
+
+#titleBox h1 {
+    letter-spacing: 2px;
+    font-family: 'Shrikhand', cursive;
+}
+
 h1 {
     font-family: 'Mada', sans-serif;
 }
@@ -63,6 +75,8 @@ a#startButton:hover {
     border-radius: 10px;
     height: 120px;
     font-family: 'Shrikhand', cursive;
+    text-align: center;
+    font-size: x-large;
 }
 
 .stats {
@@ -88,6 +102,16 @@ a#startButton:hover {
     height: 50px;
 }
 
+div#timer.jumbotron.text-center h1 {
+    font-family: 'Orbitron', sans-serif;
+}
+
+.jumbotron {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
 #timer {
     font-family: 'Orbitron', sans-serif;
+    margin-top: 20px;
+    color: white;
 }
