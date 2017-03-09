@@ -66,7 +66,7 @@ $(document).ready(function() {
             } else {
                 incorrectAnswers++;
                 stopTimer();
-                $("#questionBox").html("<p>You have " + incorrectAnswers + " incorrect answers so far. <br> There are " + questionsLeft + " questions left! Keep going!</p>");
+                $("#questionBox").html("<p>You have " + incorrectAnswers + " incorrect answers so far. <br> There are " + questionsLeft + " questions left! Keep going!<br> The correct answer is " + selectedAnswer + ". </p>");
                 $("#counter").html("Incorrect");
                 $("#nextQuestion").css("display", "inherit");
             }
