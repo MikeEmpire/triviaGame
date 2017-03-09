@@ -23,18 +23,15 @@
                 <p class="text-center">Lets check your SneakerHead knowledge..</p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4 stats">
-                <p class="text-left">Incorrect:<span id="incorrect"></span></p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 stats">
-                <p class="text-center">Correct:<span id="correct"></span></p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 stats">
-                <p class="text-left">Questions Left:<span id="questionsLeft"></span></p>
-            </div>
-        </div>
         <div id="timer" class="jumbotron text-center">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6 stats text-center">
+                    <p class="text-left">Incorrect:<span id="incorrect"></span></p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 stats text-center">
+                    <p class="text-center">Correct:<span id="correct"></span></p>
+                </div>
+            </div>
             <h1 id="counter">Get Ready!</h1>
             <p><a id="nextQuestion" class="btn btn-primary btn-lg">Next Question</a></p>
         </div>
@@ -46,10 +43,9 @@
 
         <div id="textField" class="form-group">
             <div class="input-group">
-                <span id="steez" class="input-group-addon">$</span>
                 <input id="textBar" type="text" class="form-control">
                 <span class="input-group-btn">
-                    <button id="steez" class="btn btn-default" type="button">Submit</button>
+                    <button id="steez" class="btn btn-default" type="button">$</button>
                 </span>
             </div>
         </div>
