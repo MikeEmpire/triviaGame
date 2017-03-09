@@ -91,8 +91,11 @@ $(document).ready(function() {
                 $("#counter").html("00:0" + counter);
             } else if (counter === 0) {
                 // call function to display new question
+                incorrectAnswers++;
+                console.log(incorrectAnswers);
                 $("#counter").html("Times Up!");
-                $("#questionBox").html("<p>The correct answer is " + selectedAnswer + ". You have " + questionsLeft + " left. Keep going!</p>");
+                $("#textField").css("display", "none");
+                $("#questionBox").html("<p>The correct answer is " + selectedAnswer + ". You have " + questionsLeft + " questions left. Keep going!</p>");
                 $("#nextQuestion").css("display", "inherit");
                 clearInterval(afam);
             }
